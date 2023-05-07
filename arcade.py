@@ -14,14 +14,6 @@ games = {
 on = True
 
 while on:
-    print('''  _____       _   _                                              _      
- |  __ \     | | | |                     /\                     | |     
- | |__) |   _| |_| |__   ___  _ __      /  \   _ __ ___ __ _  __| | ___ 
- |  ___/ | | | __| '_ \ / _ \| '_ \    / /\ \ | '__/ __/ _` |/ _` |/ _ \
- | |   | |_| | |_| | | | (_) | | | |  / ____ \| | | (_| (_| | (_| |  __/
- |_|    \__, |\__|_| |_|\___/|_| |_| /_/    \_\_|  \___\__,_|\__,_|\___|
-         __/ |                                                          
-        |___/                                                           ''')
     print("<< Welcome to the Python Arcade >>\nTo start playing, type the number of the game you want to play")
     for key, value in games.items():
         print(f"{key}: {games[key][0]}")

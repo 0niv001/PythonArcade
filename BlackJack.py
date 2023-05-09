@@ -18,8 +18,6 @@ def check_ace(hand, score):
     for card in hand:
         if card == 11 and score > 21:
             hand[hand.index(11)] = 1
-    points = sum(hand)
-    return points
 
 
 def b_21(hand, score):
@@ -67,6 +65,8 @@ def black_jack():
                         score_print()
                     if c_score <= 17:
                         add_card(c_hand)
-                        check_ace(p_hand, score_count(c_hand))
+                        check_ace(c_hand, score_count(c_hand))
                         c_score = score_count(c_hand)
                 showdown()
+
+black_jack()

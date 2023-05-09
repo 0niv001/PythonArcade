@@ -30,6 +30,9 @@ def showdown():
         print("You lose")
 
 
+def check_ace(hand, score):
+    print("Check ace")
+
 # Play
 while on:
     p_hand = []
@@ -45,18 +48,24 @@ while on:
             add_card(p_hand)
             add_card(c_hand)
         # Add up scores
+        check_ace(p_hand, p_score)
         p_score = score_count(p_hand, p_score)
+        check_ace(c_hand, p_score)
         c_score = score_count(c_hand, c_score)
         # Play round
         score_print()
-        while hit != "n" and p_score <= 21:
+        while hit != "n" and p_score < 22:
             hit = input("Type 'y' to get another card, type 'n' to pass \n").lower()
             if hit == "y":
                 add_card(p_hand)
+                check_ace(p_hand, p_score)
                 p_score = score_count(p_hand, p_score)
                 score_print()
-            else:
-                if c_score <= 17:
-                    add_card(c_hand)
-                    c_score = score_count(c_hand, c_score)
+            if c_score <= 17:
+                add_card(c_hand)
+                check_ace(c_hand, c_score)
+                c_score = score_count(c_hand, c_score)
         showdown()
+
+
+

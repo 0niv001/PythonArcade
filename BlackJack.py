@@ -52,10 +52,8 @@ def black_jack():
             for i in range(2):
                 add_card(p_hand)
                 add_card(c_hand)
+            check_ace(p_hand, score_count(p_hand))
             p_score = score_count(p_hand)
-            check_ace(p_hand,p_score)
-            p_score = score_count(p_hand)
-            c_score = score_count(c_hand)
             score_print()
             if b_21(p_hand,p_score):
                 print("BlackJack, You Win")
@@ -64,13 +62,11 @@ def black_jack():
                     hit = input("Type 'y' to get another card, type 'n' to pass \n").lower()
                     if hit == "y":
                         add_card(p_hand)
-                        p_score = score_count(p_hand)
-                        check_ace(p_hand, p_score)
+                        check_ace(p_hand, score_count(p_hand))
                         p_score = score_count(p_hand)
                         score_print()
                     if c_score <= 17:
                         add_card(c_hand)
-                        c_score = score_count(c_hand)
-                        check_ace(p_hand, p_score)
+                        check_ace(p_hand, score_count(c_hand))
                         c_score = score_count(c_hand)
                 showdown()

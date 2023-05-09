@@ -1,12 +1,13 @@
 import HangMan
 import RPS
 import TreasureIsland
+import BlackJack
 
 games = {
     1: ["Rock, Paper, Scissors", RPS.rps_round],
     2: ["Treasure Island", TreasureIsland.treasure],
     3: ["Hangman", HangMan.hangman],
-    4: ["BlackJack", ],
+    4: ["BlackJack", BlackJack.black_jack],
     5: ["Number Guess", ],
     6: ["Higher Lower", ],
     7: ["Quiz"],

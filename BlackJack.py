@@ -68,5 +68,3 @@ def black_jack():
                         check_ace(c_hand, score_count(c_hand))
                         c_score = score_count(c_hand)
                 showdown()
-
-black_jack()
